@@ -86,7 +86,7 @@ class Home extends React.Component{
                                 <li><a href="index4.html">Location</a></li>
                             </ul>
                 
-                        <p>&copy; 2019 Campus Manager</p>
+                        <p>&copy; 2019 Valiant</p>
                    
                     </footer>
             </div>
