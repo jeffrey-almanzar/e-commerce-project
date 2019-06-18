@@ -99,13 +99,11 @@ body {
   font-size: 24px;
   text-align: left;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  padding: 15px;
-  padding-left:10px;
-  padding-right: 0px;
+  bottom: 5px;
+  /* left: 16px; */
   background-color: rgba(0, 0, 0, 0.651);
-  width: 99.2%;
+  width: 100%;
+
 
 }
 
@@ -194,3 +192,40 @@ p {
   margin-inline-end: 0px;
 }
 
+footer{
+  background: rgb(255,199,170);
+  background: radial-gradient(circle, rgb(255, 190, 158) 0%, rgb(255, 189, 194) 0%);
+ }
+
+
+.styleF  {
+  bottom: 0;
+  /* width: 100%; */
+  height: 35px;
+  text-align: center;
+  margin:  0px;
+  font-size: 20px;
+}
+
+.styleF  ul {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: bottom;
+
+}
+
+.styleF li {
+  display: inline;
+  padding: 0 20px 0 0;
+}
+
+.styleF li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+footer p{
+  text-align: center;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+
+}
