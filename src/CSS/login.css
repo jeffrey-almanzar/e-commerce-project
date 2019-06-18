@@ -1,8 +1,8 @@
 .login-from{
     border: 2px solid rgb(255,189,194);
     width: 300px;
-    height: 300px;
-    padding: 20px;
+    height: 400px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,12 +26,14 @@
     margin: auto;
 }
 
-
 .login-form-container{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 30px;
+}
+.checkout-form-container{
+    padding: 40px;
 }
 
 .log-in-header{
