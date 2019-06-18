@@ -5,9 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Register from './components/Register';
 import Products from './components/Products';
+import Cart from './components/Cart';
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Cart />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
