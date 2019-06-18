@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/login.css';
+import '../css/login.css';
 
 class Register extends React.Component{
     constructor(props){
