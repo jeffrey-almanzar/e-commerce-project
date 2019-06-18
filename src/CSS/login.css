@@ -1,0 +1,37 @@
+.login-from{
+    border: 1px solid #000;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-from input{
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.login-from  button{
+   width: 215px;
+   display: block;
+   margin-bottom: 10px;
+   padding: 5px;
+}
+.login-from div{
+    width: 200px;
+    margin: auto;
+}
+
+
+.login-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-in-header{
+    text-align: center;
+}
