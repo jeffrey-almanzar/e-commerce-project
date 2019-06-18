@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import logo from './images/icon.JPG';
+import '../App.css';
+// import logo from '../images/icon.JPG';
 
 class Home extends React.Component{
 
