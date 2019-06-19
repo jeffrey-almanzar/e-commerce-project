@@ -15,7 +15,7 @@ class Home extends React.Component{
         <div className ="homePic">
             <img src = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/31/16/istock-639223110-2.jpg"/>
         <div className="image-top">
-                <p>Valiant</p>
+                <p className= "the-name">Valiant</p>
 
             <div className ="search-bar">
                 <input id ="query-bar" type="text" placeholder="Search for items"/>
