@@ -1,0 +1,14 @@
+.products-partent-container{
+    width: 90%;
+    margin: auto;
+}
+
+.products-container{
+   display: flex;
+   flex-wrap: wrap;
+
+}
+
+.products-title{
+    text-align: center;
+}

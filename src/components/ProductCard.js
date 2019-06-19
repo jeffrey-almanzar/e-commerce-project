@@ -10,11 +10,11 @@ class ProductCard extends React.Component{
         return(
             
 
-            <div>
+            <div className= "product-card-parent">
                
                <div className= "product-card">
                    <div className= "product-image">
-                  <img src="https://ae01.alicdn.com/kf/HTB1UiXwhv6H8KJjSspmq6z2WXXab/I-just-want-all-the-dogs-shirt-t-shirts-tumblr-quote-T-Shirts-with-sayings-womens.jpg" alt="lehman img"/>
+                  <img src={this.props.img}/>
                   </div>
                   
                   <p id="name">{this.props.name} </p>

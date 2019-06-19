@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import ProductCard from './ProductCard';
+import '../css/products.css';
 
 class Products extends React.Component{
 
@@ -20,20 +22,23 @@ class Products extends React.Component{
     }
 
     render(){
-        let temporal =[]
+        let products =[]
         this.state.products.forEach((product)=>{
-            temporal.push(<div key={product.key}>
-                <h2>{product.name}</h2>
-                <img src={product.img} alt="alt text"/>
-                <p>{product.description}</p>
-                <p>{product.price}</p>
+            products.push(
+            <ProductCard key={product.key}
+                name = {product.name}
+                img ={product.img} 
+                description = {product.description}
+                price = {product.price}> 
+            </ProductCard>)
+        });
 
-            </div>)
-        })
         return(
-            <div key={0}>
-                <h1>Hello</h1>
-                {temporal}
+            <div className="products-partent-container">
+                <h1 className="products-title">Available Products</h1>
+                <div className="products-container">
+                    {products}
+                </div>
             </div>
         )
     }
