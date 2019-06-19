@@ -14,15 +14,15 @@ class ShowProduct extends React.Component{
         <Navigation />
              <div className="showProduct">
                 <div className= "show-product-image">
-                  <img src={this.props.img}/>
+                  <img src={this.props.info.location.state.img}/>
                 </div>
              <div className="description">
-                  <h1 id="name">{this.props.name} </h1>
+                  <h1 id="name">{this.props.info.location.state.name} </h1>
                   <h4>Item details</h4>
-                  <p id="description">{this.props.description}</p>
+                  <p id="description">{this.props.info.location.state.description}</p>
                   <br></br>
                   <p id="shipping">Free shipping to United States with $3000 purchase!</p>
-                  <h3 id="price">${this.props.price}</h3> 
+                  <h3 id="price">${this.props.info.location.state.price}</h3> 
                   <br></br>
                   <button className="btn">Add To Cart</button>
                
