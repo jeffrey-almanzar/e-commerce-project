@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import CartProduct from './CartProduct';
+import TakeMoney from './Stripe';
+import Navigation from './Navigation';
 
 class Cart extends React.Component{
 
@@ -29,8 +31,6 @@ class Cart extends React.Component{
        
     }
 
-   
-
     getProducts = () =>{
         let temporal = [];
         this.state.products.forEach((product)=>{
@@ -47,17 +47,18 @@ class Cart extends React.Component{
         }
         
         return(
-            <div className="cart-container">
-                <h1 className="cart-container-title">Shopping Cart</h1>
-                <div>{this.getProducts()}</div>
+            <div>
+                
+                <Navigation />
+                <div className="cart-container">
+                    <h1 className="cart-container-title">Shopping Cart</h1>
+                    <div>{this.getProducts()}</div>
 
-                <div className="total-container">
-                    <p><span>Total: </span> <span className="product-cart-price">{`${this.state.total}$`}</span></p>
-                    <button>Proceed to Checkout</button>
+                    <div className="total-container">
+                        <p><span>Total: </span> <span className="product-cart-price">{`${this.state.total}$`}</span></p>
+                        <TakeMoney amount={this.state.total*100}/>
+                    </div>
                 </div>
-               
-
-
             </div>
         )
     }

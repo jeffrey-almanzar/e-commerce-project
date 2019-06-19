@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ProductCard from './ProductCard';
 import '../css/products.css';
+import Navigation from './Navigation';
 
 class Products extends React.Component{
 
@@ -34,10 +35,13 @@ class Products extends React.Component{
         });
 
         return(
-            <div className="products-partent-container">
-                <h1 className="products-title">Available Products</h1>
-                <div className="products-container">
-                    {products}
+            <div>
+                <Navigation />
+                <div className="products-partent-container">
+                    <h1 className="products-title">Available Products</h1>
+                    <div className="products-container">
+                        {products}
+                    </div>
                 </div>
             </div>
         )
