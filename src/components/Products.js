@@ -1,8 +1,9 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import ProductCard from './ProductCard';
 import '../css/products.css';
 import Navigation from './Navigation';
+import {Link} from 'react-router-dom';
 
 class Products extends React.Component{
 
@@ -14,13 +15,13 @@ class Products extends React.Component{
         }
     }
 
-    // componentDidMount(){
-    //     axios.get('http://localhost:3000/products')
-    //     .then((res)=>{
-    //         console.log(res)
-    //         this.setState({products: res.data})
-    //     })
-    // }
+    componentDidMount(){
+        axios.get('http://localhost:3000/products')
+        .then((res)=>{
+            console.log(res)
+            this.setState({products: res.data})
+        })
+    }
 
     render(){
         let products =[]

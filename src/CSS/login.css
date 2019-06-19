@@ -9,6 +9,10 @@
     border-radius: 5px;
 }
 
+.demo-user{
+ color: #696969;
+ margin-top:10px;
+}
 .login-from input{
     width: 200px;
     padding: 5px;

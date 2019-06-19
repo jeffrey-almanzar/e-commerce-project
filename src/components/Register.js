@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/login.css';
 import Navigation from './Navigation';
+import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 
 class Register extends React.Component{
     constructor(props){
@@ -9,7 +11,8 @@ class Register extends React.Component{
         this.state ={
             name:"",
             email:"",
-            password:""
+            password:"",
+            redirect:false
         }
     }
 
@@ -26,13 +29,27 @@ class Register extends React.Component{
 
     submit = (e) =>{
         e.preventDefault()
-        alert("Register working")
+
+        axios.post("http://localhost:3000/register", {
+            name: this.state.name,
+            email:this.state.email,
+            password: this.state.password
+        })
+        .then((res)=>{
+            this.setState({redirect:true})
+        })
+        .catch(err =>{
+            console.log(err)
+            alert("Something went wrong, try again")
+        })
+        
     }
 
     render(){
+        if(this.state.redirect){
+            return <Redirect to="/login" />
+        }
         return(
-
-
             <div>
         
             <Navigation />

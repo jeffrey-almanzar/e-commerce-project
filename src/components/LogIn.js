@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/login.css';
 import Navigation from './Navigation';
+import {Redirect} from 'react-router-dom';
+import axios from 'axios';
 
 
 class LogIn extends React.Component{
@@ -10,7 +12,8 @@ class LogIn extends React.Component{
 
         this.state = {
             email:"",
-            password:""
+            password:"",
+            redirect:false
         }
     }
 
@@ -24,10 +27,26 @@ class LogIn extends React.Component{
 
     submit = (e) =>{
         e.preventDefault()
-        alert("Submit working")
+        axios.post("http://localhost:3000/login", {
+            email:this.state.email,
+            password: this.state.password
+        })
+        .then((res)=>{
+            this.setState({redirect:true})
+        })
+        .catch(err =>{
+            console.log(err)
+            alert("Either the email or the password is not correct")
+        })
+        
+   
+    
     }
 
     render(){
+        if(this.state.redirect){
+            return <Redirect to="/products" />
+        }
         return(
             <div>
             <Navigation />
@@ -48,6 +67,7 @@ class LogIn extends React.Component{
 
                             <button className="btn" type="submit">Log In</button>
                             <button className="btn" >Create Account</button>
+                            <p className="demo-user">Demo user: demo@gmail.com   123456</p>
                         </div>
                     </form>
             </div>
