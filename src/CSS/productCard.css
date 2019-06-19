@@ -9,6 +9,12 @@
 
 .product-card-parent{
     margin-right: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.product-card-parent:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .product-card{
