@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/login.css';
 import '../App.css';
 import '../css/productCard.css';
+import {Link} from 'react-router-dom';
 
 
 class ProductCard extends React.Component{
@@ -19,7 +20,7 @@ class ProductCard extends React.Component{
                   
                   <p id="name">{this.props.name} </p>
                    <p>${this.props.price}</p> 
-                   <button className="btn">Add Item To Cart</button>
+                   <Link to="/cart"><button className="btn">Add Item To Cart</button></Link>
                
                </div>
        

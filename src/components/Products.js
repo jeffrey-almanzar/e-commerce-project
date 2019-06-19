@@ -3,6 +3,7 @@ import axios from 'axios';
 import ProductCard from './ProductCard';
 import '../css/products.css';
 import Navigation from './Navigation';
+import {Link} from 'react-router-dom';
 
 class Products extends React.Component{
 
