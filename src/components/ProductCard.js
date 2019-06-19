@@ -14,10 +14,10 @@ class ProductCard extends React.Component{
             <div className= "product-card-parent">
                
                <div className= "product-card">
-                   <div className= "product-image">
+                   <Link to="/"><div className= "product-image">
                   <img src={this.props.img}/>
-                  </div>
-                  
+                  </div></Link>
+
                   <p id="name">{this.props.name} </p>
                    <p>${this.props.price}</p> 
                    <Link to="/cart"><button className="btn">Add Item To Cart</button></Link>
