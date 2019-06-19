@@ -1,0 +1,25 @@
+.showProduct{
+    display: flex;
+    margin: 40px;
+    
+}
+.description{
+    padding-left:20px;
+}
+#shipping{
+    color:rgb(255,189,194);
+}
+/* #price{
+    color: rgb(93, 104, 255);
+} */
+.show-product-image img{
+    height: 400px;
+    width:380px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+   }
+   #name{
+       margin-top: 0px;
+   }
