@@ -20,7 +20,7 @@ class ProductCard extends React.Component{
 
                   <p id="name">{this.props.name} </p>
                    <p>${this.props.price}</p> 
-                   <Link to="/cart"><button className="btn">Add Item To Cart</button></Link>
+                   <Link to="/cart"><button className="btn">Add To Cart</button></Link>
                
                </div>
        
