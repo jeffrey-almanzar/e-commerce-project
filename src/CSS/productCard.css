@@ -20,7 +20,7 @@
 .product-card{
     width: 160px;
     padding: 10px;
-    border: 2px solid rgb(255,199,188);
+    border: 2px solidrgb(77, 77, 77);
 }
 #name{
     padding-top: 4px;
