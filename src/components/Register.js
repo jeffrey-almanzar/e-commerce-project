@@ -30,7 +30,7 @@ class Register extends React.Component{
     submit = (e) =>{
         e.preventDefault()
 
-        axios.post("http://localhost:3000/register", {
+        axios.post("https://e-ommerce-server.herokuapp.com/register", {
             name: this.state.name,
             email:this.state.email,
             password: this.state.password

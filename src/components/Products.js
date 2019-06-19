@@ -16,7 +16,7 @@ class Products extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:3000/products')
+        axios.get('https://e-ommerce-server.herokuapp.com/products')
         .then((res)=>{
             console.log(res)
             this.setState({products: res.data})

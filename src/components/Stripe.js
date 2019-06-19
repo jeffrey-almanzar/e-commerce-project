@@ -6,7 +6,7 @@ class TakeMoney extends React.Component {
     
   onToken = (token) => {
 
-    axios.post('http://localhost:3000/checkout', {stripeToken: token.id, amount:this.props.amount})
+    axios.post('https://e-ommerce-server.herokuapp.com/checkout', {stripeToken: token.id, amount:this.props.amount})
     .then((res)=>{
         console.log(res)
     })

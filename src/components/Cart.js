@@ -18,7 +18,7 @@ class Cart extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:3000/products')
+        axios.get('https://e-ommerce-server.herokuapp.com/products')
         .then((res)=>{
             console.log(res)
             let total = 0;

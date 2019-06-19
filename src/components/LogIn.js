@@ -27,7 +27,7 @@ class LogIn extends React.Component{
 
     submit = (e) =>{
         e.preventDefault()
-        axios.post("http://localhost:3000/login", {
+        axios.post("https://e-ommerce-server.herokuapp.com/login", {
             email:this.state.email,
             password: this.state.password
         })
