@@ -1,10 +1,10 @@
 .showProduct{
     display: flex;
-    margin: 40px;
+    margin: 60px;
     
 }
 .description{
-    padding-left:20px;
+    padding-left:40px;
 }
 #shipping{
     color:rgb(255,189,194);
