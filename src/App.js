@@ -47,12 +47,11 @@ class App extends React.Component{
      const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
      const ProductsComponent = () => <Products  addToCart={this.addToCart}   products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
      const CartComponent = () => <Cart products={this.state.shoppingCart} />
-
-
+     const HomeComponent = () => <Home user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
     return(
       <Router>
         <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={HomeComponent } />
           <Route  path='/login' component={LogInComponent} />
           <Route  path='/register' component={Register} />
           <Route  path='/cart' component={CartComponent} />
