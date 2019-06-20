@@ -17,12 +17,12 @@ class Home extends React.Component{
         <div className="image-top">
                 <p className= "the-name">Valiant</p>
 
-            <div className ="search-bar">
+            {/* <div className ="search-bar">
                 <input id ="query-bar" type="text" placeholder="Search for items"/>
                 <button className="search-button" type="submit" value="Search" aria-label="Search">
                     Search
                 </button>
-            </div>
+            </div> */}
 
         </div>
 
