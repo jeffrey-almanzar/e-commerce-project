@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 class ProductCard extends React.Component{
 
     addToShoopingCard = () =>{
-        this.props.addToCart({name: this.props.name, price: this.props.price, img: this.props.img})
+        this.props.addToCart({name: this.props.name, price: this.props.price, img: this.props.img, quantity:1})
     }
 
    

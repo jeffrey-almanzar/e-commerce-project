@@ -11,6 +11,11 @@ class  CartProduct extends React.Component{
         this.props.removeFromCart(product)
     }
 
+    updateT = (e) =>{
+        this.props.updateTotal({ quantity: Number(e.target.value), price: this.props.price, name: this.props.name, img: this.props.img})
+        
+    }
+
     render(){
 
         
@@ -28,7 +33,7 @@ class  CartProduct extends React.Component{
                         <p className="product-cart-name">{this.props.name}</p>
                         <div>
                             <label htmlFor="quantity">Quantity</label>
-                            <select>
+                            <select onChange={this.updateT}>
                                 <option value="1" selected>1</option>
                                 <option value="2" >2</option>
                                 <option value="3" >3</option>

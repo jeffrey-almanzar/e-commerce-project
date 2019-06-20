@@ -30,11 +30,13 @@ class Cart extends React.Component{
         if(this.state.products){
             let total =0;
             this.state.products.forEach((product)=>{
-                total+= product.price;
+                console.log(product.quantity)
+                total+= (product.price * product.quantity);
             })
 
             this.setState({total:total})
 
+            
             
         }
        
@@ -42,11 +44,40 @@ class Cart extends React.Component{
        
     }
 
+    updateTotal = (product) =>{
+        // let options = document.getElementsByTagName("OPTION");
+        // console.log(options)
+        // for(let i =0; i<options.length; i++){
+        //     if(options[i].selected){
+        //         console.log(`Value: ${options[i].value}`)
+        //     }
+            
+        // }
+        this.setState((state)=>{
+            for(let i=0; i<state.products.length; i++){
+                if(state.products[i].name == product.name){
+                   
+                    state.products[i] = product;
+                    break;
+                }
+            }
+
+            let total = 0;
+            for(let i=0; i<state.products.length; i++){
+                total+= (state.products[i].price * state.products[i].quantity);
+            }
+
+            return {products : [...state.products], total}
+        })
+       
+        console.log(product)
+    }
+
     getProducts = () =>{
         let temporal = [];
         
         this.state.products.forEach((product)=>{
-            temporal.push(<CartProduct removeFromCart= {this.props.removeFromCart} img={product.img} name={product.name} price={product.price} />)
+            temporal.push(<CartProduct updateTotal={this.updateTotal} removeFromCart= {this.props.removeFromCart} img={product.img} name={product.name} price={product.price} />)
             
         })
 
@@ -76,7 +107,7 @@ class Cart extends React.Component{
                     <div>{this.getProducts()}</div>
 
                     <div className="total-container">
-                        <p><span>Total: </span> <span className="product-cart-price">{`$${this.state.total}`}</span></p>
+                        <p><span>Total: </span> <span className="product-cart-price">{`$${this.state.total.toFixed(2)}`}</span></p>
                         <TakeMoney amount={this.state.total*100}/>
                     </div>
                 </div>
