@@ -37,7 +37,14 @@ class LogIn extends React.Component{
         })
         .then((res)=>{
             console.log(res)
-            this.setState({redirect:true})
+            if(res.data){
+                this.setState({redirect:true})
+            }
+            else{
+                alert("Either the email or the password is not correct")
+            }
+           
+           
             this.logInUser(res.data)
             
         })
