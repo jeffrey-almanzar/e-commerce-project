@@ -27,7 +27,17 @@ class App extends React.Component{
     axios.get('https://e-ommerce-server.herokuapp.com/products')
     .then((res)=>{
         console.log(res)
-        this.setState({products: res.data})
+        let product =[]
+        for(let i=0; i< res.data.length; i++){
+          product.push({
+            name: res.data[i].name,
+            description: res.data[i].description,
+            img: res.data[i].img,
+            quantity: 1,
+          })
+        }
+        console.log(product)
+        this.setState({products: product})
     })  
   }
 
@@ -52,7 +62,7 @@ class App extends React.Component{
 
   render(){
     const ShowProductComponent = (info) =>{ 
-     return (<ShowProduct info={info} />)}
+     return (<ShowProduct info={info} addToCart ={this.addToCart} />)}
 
      const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
      const ProductsComponent = () => <Products  addToCart={this.addToCart}   products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />

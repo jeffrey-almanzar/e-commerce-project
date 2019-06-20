@@ -7,7 +7,15 @@ import Navigation from './Navigation';
 
 
 class ShowProduct extends React.Component{
+    add = () =>{
+        let product = {
+            name: this.props.info.location.state.name,
+            price: this.props.info.location.state.price,
+            img:this.props.info.location.state.img
+        }
 
+        this.props.addToCart(product)
+    }
     render(){
         return(
             <div>
@@ -24,7 +32,7 @@ class ShowProduct extends React.Component{
                   <p id="shipping">Free shipping to United States with $3000 purchase!</p>
                   <h3 id="price">${this.props.info.location.state.price}</h3> 
                   <br></br>
-                  <button className="btn">Add To Cart</button>
+                  <button onClick={this.add} className="btn">Add To Cart</button>
                
              </div>
        
