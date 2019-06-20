@@ -11,13 +11,28 @@ import Thanks from './components/Thanks';
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
+let User ='' ;
+let login = false;
+
+if(localStorage.name){
+  login = true;
+  User = {
+     
+      id:1,
+      name: localStorage.name,
+      email: localStorage.email,
+      login: true
+  }
+}
+
+
 class App extends React.Component{
 
   constructor(props){
     super(props)
     this.state ={
-      login:false,
-      user: "",
+      login:login,
+      user: User,
       products:[],
       shoppingCart:[]
     }
@@ -42,7 +57,14 @@ class App extends React.Component{
   }
 
   userLogIn = (exp, user) =>{
-    this.setState({login: exp, user:user})
+    //this.setState({login: exp, user:user})
+    if(!exp){
+     
+      this.setState({user:"", login:false, shoppingCart:[]})
+      localStorage.clear();
+    }else{
+      this.setState({login:true, user: user })
+    }
   }  
 
   addToCart =(product) =>{
