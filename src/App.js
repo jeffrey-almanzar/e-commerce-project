@@ -42,12 +42,29 @@ class App extends React.Component{
   }
 
   userLogIn = (exp, user) =>{
+    let empyCart = exp ? false: true;
+   
+    
     this.setState({login: exp, user:user})
+    if (empyCart){
+      this.setState({shoppingCart:[]})
+    }
   }  
 
   addToCart =(product) =>{
     this.setState( (state) =>{
-      return state.shoppingCart.push(product)
+      let notInCart = true;
+      state.shoppingCart.forEach((pr)=>{
+        if(product.name == pr.name){
+          notInCart = false;
+        }
+      })
+      if(notInCart && this.state.login){
+        return state.shoppingCart.push(product)
+      }else{
+        alert("Already in cart or you are not logged in.")
+      }
+      
     })
   }
 
