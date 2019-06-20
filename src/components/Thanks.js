@@ -19,11 +19,9 @@ class Thanks extends React.Component{
 
         </div>
 
-        {/* <div className="image-bottom">
-             <p>Duis aute irure dolor in reprehenderit in voluptate 
-                         velit esse cillum dolore eu fugiat nulla pariatur. 
-                         Excepteur sint occaecat cupidatat non proid.</p> 
-        </div> */}
+        <div className="image-bottom" >
+             <p>Give Us Your Money.</p> 
+        </div>
 
 
 
