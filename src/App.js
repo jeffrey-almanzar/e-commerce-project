@@ -11,21 +11,32 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 class App extends React.Component{
 
+  constructor(props){
+    super(props)
+    this.state ={
+      login:false
+    }
+  }
+
+  userLogIn = (exp) =>{
+    this.setState({login: exp})
+  }  
+
   render(){
     const ShowProductComponent = (info) =>{ 
-     return (<ShowProduct info={info} />)
-      }
-  
+     return (<ShowProduct info={info} />)}
 
+     const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
+     const ProductsComponent = () => <Products login={this.state.login} />
 
     return(
       <Router>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route  path='/login' component={LogIn} />
+          <Route  path='/login' component={LogInComponent} />
           <Route  path='/register' component={Register} />
           <Route  path='/cart' component={Cart} />
-          <Route  path='/products' component={Products} />
+          <Route  path='/products' component={ProductsComponent} />
           <Route path='/description' component={ShowProductComponent}/>
           
         </Switch>

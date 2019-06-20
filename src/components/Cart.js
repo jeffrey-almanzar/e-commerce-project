@@ -18,15 +18,15 @@ class Cart extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('https://e-ommerce-server.herokuapp.com/products')
-        .then((res)=>{
-            console.log(res)
-            let total = 0;
-            res.data.forEach((product)=>{
-               total+= Number(product.price)
-            })
-            this.setState({products: res.data, total:total})
-        })
+        // axios.get('https://e-ommerce-server.herokuapp.com/products')
+        // .then((res)=>{
+        //     console.log(res)
+        //     let total = 0;
+        //     res.data.forEach((product)=>{
+        //        total+= Number(product.price)
+        //     })
+        //     this.setState({products: res.data, total:total.toFixed(2)})
+        // })
 
        
     }
@@ -43,7 +43,13 @@ class Cart extends React.Component{
 
     render(){
         if(!this.state.products.length){
-            return <h2>There are not products in your shopping bag yet</h2>
+            return(
+             <div>
+                <Navigation />
+                <h1 className="cart-container-title">Shopping Cart</h1>
+                <h2 className="cart-info">There are not products in your shopping cart yet.</h2>
+            </div>
+            )
         }
         
         return(

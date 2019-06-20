@@ -25,6 +25,10 @@ class LogIn extends React.Component{
         this.setState({password: event.target.value})
     }
 
+    logInUser = () =>{
+        this.props.loginFunction(true)
+    }
+
     submit = (e) =>{
         e.preventDefault()
         axios.post("https://e-ommerce-server.herokuapp.com/login", {
@@ -32,7 +36,10 @@ class LogIn extends React.Component{
             password: this.state.password
         })
         .then((res)=>{
+            console.log(res)
             this.setState({redirect:true})
+            this.logInUser()
+            
         })
         .catch(err =>{
             console.log(err)

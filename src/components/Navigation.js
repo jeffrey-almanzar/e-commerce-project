@@ -27,7 +27,8 @@ class Navigation extends React.Component{
                                     <li><Link to="/register" >Profile</Link></li>
                                     <li id="cart" role="button"><Link to="/cart" ><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" /></Link>
                                     </li> 
-                            </ul>
+                                    
+                                </ul>
 
                             </div>
 

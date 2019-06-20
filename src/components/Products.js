@@ -37,7 +37,7 @@ class Products extends React.Component{
 
         return(
             <div>
-                <Navigation />
+                <Navigation login={this.props.login} />
                 <div className="products-partent-container">
                     <h1 className="products-title">Available Products</h1>
                     <div className="products-container">
