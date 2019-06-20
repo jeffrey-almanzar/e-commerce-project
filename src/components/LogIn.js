@@ -25,8 +25,8 @@ class LogIn extends React.Component{
         this.setState({password: event.target.value})
     }
 
-    logInUser = () =>{
-        this.props.loginFunction(true)
+    logInUser = (user) =>{
+        this.props.loginFunction(true,user)
     }
 
     submit = (e) =>{
@@ -38,7 +38,7 @@ class LogIn extends React.Component{
         .then((res)=>{
             console.log(res)
             this.setState({redirect:true})
-            this.logInUser()
+            this.logInUser(res.data)
             
         })
         .catch(err =>{

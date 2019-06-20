@@ -4,6 +4,11 @@ import {Link} from 'react-router-dom';
 
 class Navigation extends React.Component{
 
+    logout = () =>{
+        alert("Logging out")
+        this.props.loginFunction(false, "")
+    }
+
     render(){
         if(this.props.login){
             return(
@@ -23,8 +28,9 @@ class Navigation extends React.Component{
 
                             <div className= "nav-left">
                                 <ul>
-                                    <li id="sign-in" role="button"><Link to="/" >Log out</Link></li>
-                                    <li><Link to="/register" >Profile</Link></li>
+                                   
+                                    <li className="user-log-in">Hello, {this.props.user.name}</li>
+                                    <li id="sign-in"  onClick={this.logout} role="button"><Link to="/" >Log out</Link></li>
                                     <li id="cart" role="button"><Link to="/cart" ><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" /></Link>
                                     </li> 
                                     

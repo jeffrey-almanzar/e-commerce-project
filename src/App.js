@@ -14,12 +14,13 @@ class App extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      login:false
+      login:false,
+      user: ""
     }
   }
 
-  userLogIn = (exp) =>{
-    this.setState({login: exp})
+  userLogIn = (exp, user) =>{
+    this.setState({login: exp, user:user})
   }  
 
   render(){
@@ -27,7 +28,7 @@ class App extends React.Component{
      return (<ShowProduct info={info} />)}
 
      const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
-     const ProductsComponent = () => <Products login={this.state.login} />
+     const ProductsComponent = () => <Products user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
 
     return(
       <Router>
