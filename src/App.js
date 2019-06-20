@@ -6,6 +6,7 @@ import Register from './components/Register';
 import Products from './components/Products';
 import Cart from './components/Cart';
 import ShowProduct from './components/ShowProduct';
+import axios from "axios";
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -15,8 +16,17 @@ class App extends React.Component{
     super(props)
     this.state ={
       login:false,
-      user: ""
+      user: "",
+      products:""
     }
+  }
+
+  componentDidMount(){
+    axios.get('https://e-ommerce-server.herokuapp.com/products')
+    .then((res)=>{
+        console.log(res)
+        this.setState({products: res.data})
+    })  
   }
 
   userLogIn = (exp, user) =>{
@@ -28,7 +38,7 @@ class App extends React.Component{
      return (<ShowProduct info={info} />)}
 
      const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
-     const ProductsComponent = () => <Products user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
+     const ProductsComponent = () => <Products products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
 
     return(
       <Router>

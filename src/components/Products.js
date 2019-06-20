@@ -11,7 +11,7 @@ class Products extends React.Component{
         super(props)
 
         this.state ={
-            products:[]
+            products: ""
         }
     }
 
@@ -20,20 +20,26 @@ class Products extends React.Component{
         .then((res)=>{
             console.log(res)
             this.setState({products: res.data})
-        })
-    }
+        })  
+      }
+
+    
 
     render(){
         let products =[]
-        this.state.products.forEach((product)=>{
-            products.push(
-            <ProductCard key={product.key}
-                name = {product.name}
-                img ={product.img} 
-                description = {product.description}
-                price = {product.price}> 
-            </ProductCard>)
-        });
+        if(this.state.products.length){
+            this.state.products.forEach((product)=>{
+                products.push(
+                <ProductCard key={product.key}
+                    name = {product.name}
+                    img ={product.img} 
+                    description = {product.description}
+                    price = {product.price}> 
+                </ProductCard>)
+            });
+
+        }
+        
 
         return(
             <div>
