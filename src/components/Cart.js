@@ -12,7 +12,7 @@ class Cart extends React.Component{
         
 
         this.state ={
-            products:[],
+            products:this.props.products,
             total:0
         }
     }
@@ -27,15 +27,30 @@ class Cart extends React.Component{
         //     })
         //     this.setState({products: res.data, total:total.toFixed(2)})
         // })
+        if(this.state.products){
+            let total =0;
+            this.state.products.forEach((product)=>{
+                total+= product.price;
+            })
+
+            this.setState({total:total})
+
+            
+        }
+       
 
        
     }
 
     getProducts = () =>{
         let temporal = [];
+        
         this.state.products.forEach((product)=>{
             temporal.push(<CartProduct img={product.img} name={product.name} price={product.price} />)
+            
         })
+
+        
 
         return temporal;
       

@@ -34,7 +34,10 @@ class Products extends React.Component{
                     name = {product.name}
                     img ={product.img} 
                     description = {product.description}
-                    price = {product.price}> 
+                    price = {product.price}
+                    addToCart = {this.props.addToCart}
+                    > 
+                    
                 </ProductCard>)
             });
 

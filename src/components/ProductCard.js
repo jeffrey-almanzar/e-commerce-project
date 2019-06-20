@@ -7,6 +7,12 @@ import {Link} from 'react-router-dom';
 
 class ProductCard extends React.Component{
 
+    addToShoopingCard = () =>{
+        this.props.addToCart({name: this.props.name, price: this.props.price, img: this.props.img})
+    }
+
+   
+
     render(){
         return(
             
@@ -28,7 +34,7 @@ class ProductCard extends React.Component{
 
                   <p id="name">{this.props.name} </p>
                    <p>${this.props.price}</p> 
-                   <button className="btn">Add To Cart</button>
+                   <button onClick={this.addToShoopingCard} className="btn">Add To Cart</button>
                
                </div>
        

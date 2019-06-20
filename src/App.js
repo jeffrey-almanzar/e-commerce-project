@@ -17,7 +17,8 @@ class App extends React.Component{
     this.state ={
       login:false,
       user: "",
-      products:""
+      products:[],
+      shoppingCart:[]
     }
   }
 
@@ -33,12 +34,20 @@ class App extends React.Component{
     this.setState({login: exp, user:user})
   }  
 
+  addToCart =(product) =>{
+    this.setState( (state) =>{
+      return state.shoppingCart.push(product)
+    })
+  }
+
   render(){
     const ShowProductComponent = (info) =>{ 
      return (<ShowProduct info={info} />)}
 
      const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
-     const ProductsComponent = () => <Products products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
+     const ProductsComponent = () => <Products  addToCart={this.addToCart}   products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
+     const CartComponent = () => <Cart products={this.state.shoppingCart} />
+
 
     return(
       <Router>
@@ -46,7 +55,7 @@ class App extends React.Component{
           <Route exact path='/' component={Home} />
           <Route  path='/login' component={LogInComponent} />
           <Route  path='/register' component={Register} />
-          <Route  path='/cart' component={Cart} />
+          <Route  path='/cart' component={CartComponent} />
           <Route  path='/products' component={ProductsComponent} />
           <Route path='/description' component={ShowProductComponent}/>
           
