@@ -47,7 +47,7 @@ class Cart extends React.Component{
              <div>
                 <Navigation />
                 <h1 className="cart-container-title">Shopping Cart</h1>
-                <h2 className="cart-info">There are not products in your shopping cart yet.</h2>
+                <h3 className="cart-info">There are not products in your shopping cart yet.</h3>
             </div>
             )
         }
