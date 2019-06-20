@@ -91,7 +91,7 @@ class Cart extends React.Component{
         if(!this.state.products.length){
             return(
              <div>
-                <Navigation />
+                <Navigation  user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction}/>
                 <h1 className="cart-container-title">Shopping Cart</h1>
                 <h3 className="cart-info">There are no products in your shopping cart yet.</h3>
             </div>
@@ -101,7 +101,7 @@ class Cart extends React.Component{
         return(
             <div>
                 
-                <Navigation />
+                <Navigation  user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction}/>
                 <div className="cart-container">
                     <h1 className="cart-container-title">Shopping Cart</h1>
                     <div>{this.getProducts()}</div>

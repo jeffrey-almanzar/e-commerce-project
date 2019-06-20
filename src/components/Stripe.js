@@ -1,14 +1,23 @@
 import React from 'react'
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
  
 class TakeMoney extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state ={
+            redirect:false
+        }
+    }
     
   onToken = (token) => {
 
     axios.post('https://e-ommerce-server.herokuapp.com/checkout', {stripeToken: token.id, amount:this.props.amount})
     .then((res)=>{
         console.log(res)
+        this.setState({redirect:true})
     })
     .catch((err)=>{
         console.log(err)
@@ -22,6 +31,9 @@ class TakeMoney extends React.Component {
     }
 
     render() {
+        if(this.state.redirect){
+            return <Redirect to="thanks" />
+        }
         return (
         // ...
         <StripeCheckout

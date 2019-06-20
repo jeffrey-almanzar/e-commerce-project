@@ -87,13 +87,14 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  padding: 15px;
-  padding-left:10px;
   padding-right: 0px;
   background-color: rgba(0, 0, 0, 0.651);
-  width: 99.2%;
-
+  width: 100%;
 }
+.image-top p{
+  padding: 10px;
+}
+
 .image-bottom div, .image-bottom div hr{
   text-align: center;
   color: rgba(255, 255, 255, 0.651);

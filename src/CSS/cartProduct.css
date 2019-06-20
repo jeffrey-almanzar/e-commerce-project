@@ -10,7 +10,8 @@
 }
 
 .product-cart-name{
-    font-weight: 800;
+    padding-top: 4px;
+    color: rgb(119, 119, 119);
 }
 
 .product-cart{

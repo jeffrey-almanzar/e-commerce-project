@@ -7,6 +7,7 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import ShowProduct from './components/ShowProduct';
 import axios from "axios";
+import Thanks from './components/Thanks';
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -65,8 +66,9 @@ class App extends React.Component{
 
      const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
      const ProductsComponent = () => <Products  addToCart={this.addToCart}   products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
-     const CartComponent = () => <Cart products={this.state.shoppingCart}  removeFromCart= {this.removeFromCart} />
+     const CartComponent = () => <Cart products={this.state.shoppingCart} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} removeFromCart= {this.removeFromCart} />
      const HomeComponent = () => <Home user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
+     
     return(
       <Router>
         <Switch>
@@ -76,6 +78,7 @@ class App extends React.Component{
           <Route  path='/cart' component={CartComponent} />
           <Route  path='/products' component={ProductsComponent} />
           <Route path='/description' component={ShowProductComponent}/>
+          <Route path='/thanks' component={Thanks}/>
           
         </Switch>
         
