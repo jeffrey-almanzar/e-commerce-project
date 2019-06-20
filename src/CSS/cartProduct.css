@@ -5,7 +5,7 @@
 }
 
 .product-cart-price{
-    color: rgb(202, 0, 0);
+    color: rgb(255, 0, 0);
     font-weight: 700;
 }
 
@@ -77,8 +77,9 @@
 }
 
 .remove-btn-container button{
-    background-color: #FF1744;
-    border-color:#FF1744;
+    background-color: rgb(255, 0, 0);
+    border-color:rgb(216, 0, 0);
+    border-radius: 3px;
     color: #fff;
     border-style: solid;
     cursor: pointer;
