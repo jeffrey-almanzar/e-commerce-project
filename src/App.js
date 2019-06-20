@@ -40,13 +40,22 @@ class App extends React.Component{
     })
   }
 
+  removeFromCart = (deleteProduct) =>{
+    this.setState( (state) =>{
+      let newList = state.shoppingCart.filter((product) =>{
+        return product.name !== deleteProduct.name;
+      })
+      return {shoppingCart: newList}
+    }) 
+  }
+
   render(){
     const ShowProductComponent = (info) =>{ 
      return (<ShowProduct info={info} />)}
 
      const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
      const ProductsComponent = () => <Products  addToCart={this.addToCart}   products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
-     const CartComponent = () => <Cart products={this.state.shoppingCart} />
+     const CartComponent = () => <Cart products={this.state.shoppingCart}  removeFromCart= {this.removeFromCart} />
      const HomeComponent = () => <Home user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
     return(
       <Router>

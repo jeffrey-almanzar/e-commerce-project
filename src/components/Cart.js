@@ -46,7 +46,7 @@ class Cart extends React.Component{
         let temporal = [];
         
         this.state.products.forEach((product)=>{
-            temporal.push(<CartProduct img={product.img} name={product.name} price={product.price} />)
+            temporal.push(<CartProduct removeFromCart= {this.props.removeFromCart} img={product.img} name={product.name} price={product.price} />)
             
         })
 
