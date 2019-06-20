@@ -111,8 +111,17 @@ body {
   /* left: 16px; */
   background-color: rgba(0, 0, 0, 0.651);
   width: 100%;
-  padding-bottom: 20px;
+  height:20%;
+  padding-bottom: 40px;
+}
+.image-bottom p, h3{
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 2vw;
 
+}
+.whole-nav{
+  position: relative;
 }
 
 
