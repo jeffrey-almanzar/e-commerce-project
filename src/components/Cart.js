@@ -76,7 +76,7 @@ class Cart extends React.Component{
                     <div>{this.getProducts()}</div>
 
                     <div className="total-container">
-                        <p><span>Total: </span> <span className="product-cart-price">{`${this.state.total}$`}</span></p>
+                        <p><span>Total: </span> <span className="product-cart-price">{`$${this.state.total}`}</span></p>
                         <TakeMoney amount={this.state.total*100}/>
                     </div>
                 </div>

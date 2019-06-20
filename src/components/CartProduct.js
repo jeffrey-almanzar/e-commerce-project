@@ -39,7 +39,7 @@ class  CartProduct extends React.Component{
 
                 </div>
 
-                <p className="product-cart-price">{this.props.price}$</p>
+                <p className="product-cart-price">${this.props.price}</p>
                 
                 <div className="remove-btn-container">
                         <button onClick={this.remove}>Remove from cart</button>
