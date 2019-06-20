@@ -9,7 +9,7 @@ class Home extends React.Component{
   render(){
   return (
     <div className="">
-    <Navigation />
+    <Navigation user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
 
     <body>
         <div className ="homePic">
