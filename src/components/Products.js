@@ -34,6 +34,7 @@ class Products extends React.Component{
                     name = {product.name}
                     img ={product.img} 
                     description = {product.description}
+                    quantity={product.quantity}
                     price = {product.price}
                     addToCart = {this.props.addToCart}
                     > 
@@ -54,20 +55,7 @@ class Products extends React.Component{
                     </div>
                 </div>
 
-                <div >
-                    <footer>
-
-                                <ul className="styleF">
-                                    <li> <a href="/">Privacy Policy</a></li>
-                                    <li> <a href="/">Terms of Use</a></li>
-                                    <li> <a href="/">Sponsers</a></li>
-                                    <li><a href="/">Location</a></li>
-                                </ul>
-                    
-                            <p>&copy; 2019 Valiant</p>
-                    
-                        </footer>
-                </div>
+                
             </div>
         )
     }

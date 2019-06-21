@@ -83,10 +83,10 @@ class LogIn extends React.Component{
                         
                         <div>
                             <p><label>Email</label></p>
-                            <input type="email" value={this.state.email} onChange={this.emailChange} />
+                            <input type="email" value={this.state.email} onChange={this.emailChange} required/>
 
                             <p><label>Password</label></p>
-                            <input type="password" value={this.state.password} onChange={this.passwordChange} />
+                            <input type="password" value={this.state.password} onChange={this.passwordChange} required/>
                             <br />
 
                             <button className="btn" type="submit">Log In</button>

@@ -52,7 +52,7 @@ class App extends React.Component{
             description: res.data[i].description,
             img: res.data[i].img,
             price: res.data[i].price,
-            quantity: 1,
+            quantity: res.data[i].quantity,
           })
         }
         console.log(product)
@@ -114,7 +114,7 @@ class App extends React.Component{
         .then((data)=>{
           console.log(data)
         })
-        return state.shoppingCart.push(product)
+        return { shoppingCart: [...state.shoppingCart ,product]}
       }else{
         alert("Already in cart or you are not logged in.")
       }
@@ -148,7 +148,7 @@ class App extends React.Component{
 
   render(){
     const ShowProductComponent = (info) =>{ 
-     return (<ShowProduct info={info} addToCart ={this.addToCart} />)}
+     return (<ShowProduct info={info} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} addToCart ={this.addToCart} />)}
     const ThanksComponent = () => <Thanks clearCart ={this.clearCart} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
      const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
      const ProductsComponent = () => <Products  addToCart={this.addToCart}   products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
