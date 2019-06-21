@@ -20,7 +20,7 @@ class ShowProduct extends React.Component{
     render(){
         return(
             <div>
-        <Navigation user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
+        <Navigation cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
              <div className="showProduct">
                 <div className= "show-product-image">
                   <img src={this.props.info.location.state.img}/>

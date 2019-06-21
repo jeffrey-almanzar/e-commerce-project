@@ -17,27 +17,7 @@ class Cart extends React.Component{
 
     componentDidMount(){
     
-        // axios.get('https://e-ommerce-server.herokuapp.com/cartProducts/'+this.props.user.name)
-        // .then((data)=>{
-            
-        //     let total =0;
-        //     data.data.forEach((item)=>{
-        //         total += (item.price * item.quantity)
-        //     })
-
-        //     let product =[]
-        //     for(let i=0; i< data.data.length; i++){
-        //       product.push({
-        //         name: data.data[i].product,
-        //         description: data.data[i].description,
-        //         price: data.data[i].price,
-        //         img: data.data[i].img,
-        //         quantity: data.data[i].quantity,
-        //       })
-        //     }
-        //     //this.setState({ products: product})
-        //     this.setState({products:product, total})
-        // })
+        
 
         if(this.state.products){
             let total =0;
@@ -96,7 +76,7 @@ class Cart extends React.Component{
         if(!this.state.products.length){
             return(
              <div>
-                <Navigation  user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction}/>
+                <Navigation  cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction}/>
                 <h1 className="cart-container-title">Shopping Cart</h1>
                 <h3 className="cart-info">There are no products in your shopping cart yet.</h3>
             </div>
@@ -106,7 +86,7 @@ class Cart extends React.Component{
         return(
             <div>
                 
-                <Navigation  user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction}/>
+                <Navigation cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction}/>
                 <div className="cart-container">
                     <h1 className="cart-container-title">Shopping Cart</h1>
                     <div>{this.getProducts()}</div>

@@ -52,7 +52,7 @@ class Register extends React.Component{
         return(
             <div>
         
-            <Navigation />
+            <Navigation cartSize={this.props.cartSize} />
 
             <div className="login-form-container">
                 <form className="login-from" onSubmit={this.submit}>

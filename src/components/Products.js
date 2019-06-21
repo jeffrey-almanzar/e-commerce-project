@@ -47,7 +47,7 @@ class Products extends React.Component{
 
         return(
             <div>
-                <Navigation user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
+                <Navigation cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
                 <div className="products-partent-container">
                     <h1 className="products-title">Available Products</h1>
                     <div className="products-container">

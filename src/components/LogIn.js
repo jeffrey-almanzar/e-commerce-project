@@ -73,7 +73,7 @@ class LogIn extends React.Component{
         }
         return(
             <div>
-            <Navigation />
+            <Navigation cartSize={this.props.cartSize} />
                
 
             <div className="login-form-container">

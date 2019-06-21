@@ -148,13 +148,13 @@ class App extends React.Component{
 
   render(){
     const ShowProductComponent = (info) =>{ 
-     return (<ShowProduct info={info} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} addToCart ={this.addToCart} />)}
-    const ThanksComponent = () => <Thanks clearCart ={this.clearCart} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
-     const LogInComponent = () => <LogIn login={this.state.login} loginFunction = {this.userLogIn} />
-     const ProductsComponent = () => <Products  addToCart={this.addToCart}   products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
-     const CartComponent = () => <Cart clearCart ={this.clearCart}  products={this.state.shoppingCart} allProducts={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} removeFromCart= {this.removeFromCart} />
-     const HomeComponent = () => <Home user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
-     const NotFoundComponent = () => <NotFound user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}/>;
+     return (<ShowProduct info={info} cartSize={this.state.shoppingCart.length} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} addToCart ={this.addToCart} />)}
+    const ThanksComponent = () => <Thanks cartSize={this.state.shoppingCart.length} clearCart ={this.clearCart} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
+     const LogInComponent = () => <LogIn cartSize={this.state.shoppingCart.length} login={this.state.login} loginFunction = {this.userLogIn} />
+     const ProductsComponent = () => <Products  cartSize={this.state.shoppingCart.length} addToCart={this.addToCart}   products={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}  />
+     const CartComponent = () => <Cart cartSize={this.state.shoppingCart.length} clearCart ={this.clearCart}  products={this.state.shoppingCart} allProducts={this.state.products} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} removeFromCart= {this.removeFromCart} />
+     const HomeComponent = () => <Home cartSize={this.state.shoppingCart.length} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login} />
+     const NotFoundComponent = () => <NotFound cartSize={this.state.shoppingCart.length} user = {this.state.user} loginFunction = {this.userLogIn} login={this.state.login}/>;
     return(
       <Router>
         <Switch>

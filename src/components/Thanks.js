@@ -14,7 +14,7 @@ class Thanks extends React.Component{
   render(){
   return (
     <div className="">
-    <Navigation user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
+    <Navigation cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
 
     <body>
         <div className ="homePic">

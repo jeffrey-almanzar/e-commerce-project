@@ -24,6 +24,10 @@ a[href="/register"]{
   border-radius:50%;
 }
 
+.cart-size{
+  color: #fff;
+}
+
 .not-found-title{
   font-family: 'Dancing Script', cursive;
 font-size: 2.5rem;
