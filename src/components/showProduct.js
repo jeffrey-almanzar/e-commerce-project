@@ -27,7 +27,11 @@ class ShowProduct extends React.Component{
              <div className="description">
                   <h1 id="name">{this.props.info.location.state.name} </h1>
                   <h4>Item details</h4>
-                  <p id="description">{this.props.info.location.state.description}</p>
+                  <p id="description"> Duis aute irure dolor in reprehenderit in voluptate 
+                         velit esse cillum dolore eu fugiat nulla pariatur. 
+                         Excepteur sint occaecat cupidatat non proid.
+                         Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
                   <br></br>
                   <p id="shipping">Free shipping to United States with $3000 purchase!</p>
                   <h3 id="price">${this.props.info.location.state.price}</h3> 
