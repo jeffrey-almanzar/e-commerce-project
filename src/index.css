@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+a[href="/register"]{
+  text-decoration:none;
+}
+
+.not-found{
+  width:400px;
+  height: 400px;
+  background-image: url('https://images-na.ssl-images-amazon.com/images/I/61QzcOL4zSL._SX425_.jpg');
+  margin:auto;
+  border-radius:50%;
+}
+
+.not-found-title{
+  text-align: center;
+}

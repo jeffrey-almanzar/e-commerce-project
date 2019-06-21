@@ -30,7 +30,7 @@ class Products extends React.Component{
         if(this.state.products.length){
             this.state.products.forEach((product)=>{
                 products.push(
-                <ProductCard key={product.key}
+                <ProductCard key={ Math.floor(Math.random() * 1000)}
                     name = {product.name}
                     img ={product.img} 
                     description = {product.description}
@@ -52,6 +52,21 @@ class Products extends React.Component{
                     <div className="products-container">
                         {products}
                     </div>
+                </div>
+
+                <div >
+                    <footer>
+
+                                <ul className="styleF">
+                                    <li> <a href="/">Privacy Policy</a></li>
+                                    <li> <a href="/">Terms of Use</a></li>
+                                    <li> <a href="/">Sponsers</a></li>
+                                    <li><a href="/">Location</a></li>
+                                </ul>
+                    
+                            <p>&copy; 2019 Valiant</p>
+                    
+                        </footer>
                 </div>
             </div>
         )

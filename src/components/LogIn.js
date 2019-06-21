@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/login.css';
 import Navigation from './Navigation';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -90,7 +90,7 @@ class LogIn extends React.Component{
                             <br />
 
                             <button className="btn" type="submit">Log In</button>
-                            <button className="btn" >Create Account</button>
+                            <Link to="/register"><button className="btn" >Create Account</button></Link>
                             <p className="demo-user">Demo user: demo@gmail.com   123456</p>
                         </div>
                     </form>
@@ -104,10 +104,10 @@ class LogIn extends React.Component{
                     <footer>
                             
                             <ul className="styleF">
-                                <li> <a href="index4.html">Privacy Policy</a></li>
-                                <li> <a href="index4.html">Terms of Use</a></li>
-                                <li> <a href="index4.html">Sponsers</a></li>
-                                <li><a href="index4.html">Location</a></li>
+                                <li> <a href="/">Privacy Policy</a></li>
+                                <li> <a href="/">Terms of Use</a></li>
+                                <li> <a href="/">Sponsers</a></li>
+                                <li><a href="/">Location</a></li>
                             </ul>
                 
                         <p>&copy; 2019 Valiant</p>

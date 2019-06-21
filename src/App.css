@@ -215,6 +215,9 @@ footer{
   background:rgb(70, 70, 70);;
   margin-top:-5px;}
 
+  footer p{
+    padding-bottom:20px;
+  }
 
 .styleF  {
   bottom: 0;
@@ -223,6 +226,7 @@ footer{
   text-align: center;
   margin:  0px;
   font-size: 16px;
+  padding-top:20px;
 }
 
 .styleF  ul {

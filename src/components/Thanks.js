@@ -6,6 +6,11 @@ import Navigation from './Navigation';
 
 class Thanks extends React.Component{
 
+ 
+//  componentDidMount(){
+//     this.props.clearCart()
+//  }
+
   render(){
   return (
     <div className="">
@@ -35,10 +40,10 @@ class Thanks extends React.Component{
                         
                       
                             <ul className="styleF">
-                                <li> <a href="index4.html">Privacy Policy</a></li>
-                                <li> <a href="index4.html">Terms of Use</a></li>
-                                <li> <a href="index4.html">Sponsers</a></li>
-                                <li><a href="index4.html">Location</a></li>
+                                <li> <a href="/">Privacy Policy</a></li>
+                                <li> <a href="/">Terms of Use</a></li>
+                                <li> <a href="/">Sponsers</a></li>
+                                <li><a href="/">Location</a></li>
                             </ul>
                 
                         <p>&copy; 2019 Valiant</p>

@@ -28,7 +28,7 @@ class ProductCard extends React.Component{
                        }}}>
                    
                         <div className= "product-image">
-                            <img src={this.props.img}/>
+                            <img src={this.props.img} alt="img not available" />
                         </div>
                   </Link>
 

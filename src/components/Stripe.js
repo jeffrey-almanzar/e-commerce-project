@@ -16,7 +16,13 @@ class TakeMoney extends React.Component {
 
     axios.post('https://e-ommerce-server.herokuapp.com/checkout', {stripeToken: token.id, amount:this.props.amount})
     .then((res)=>{
-        console.log(res)
+        axios.delete('https://e-ommerce-server.herokuapp.com/clearCart/'+this.props.user.name)
+            .then((data)=>{
+            console.log(data)
+            this.props.clearCart()
+         })
+
+
         this.setState({redirect:true})
     })
     .catch((err)=>{
@@ -32,7 +38,7 @@ class TakeMoney extends React.Component {
 
     render() {
         if(this.state.redirect){
-            return <Redirect to="thanks" />
+            return <Redirect to="/thanks" />
         }
         return (
         // ...
@@ -41,7 +47,7 @@ class TakeMoney extends React.Component {
             token={this.onToken}
             stripeKey="pk_test_ZK7HgTR4MPMvQqVC8hJGFtZ5000PZZ4jDI"
             shippingAddress
-            email="testingemail@outlook.com"
+            email={this.props.user.email}
             
         />
         )

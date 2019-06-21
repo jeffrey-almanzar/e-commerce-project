@@ -9,8 +9,6 @@ class Cart extends React.Component{
     constructor(props){
         super(props)
 
-        
-
         this.state ={
             products:this.props.products,
             total:0
@@ -18,15 +16,29 @@ class Cart extends React.Component{
     }
 
     componentDidMount(){
-        // axios.get('https://e-ommerce-server.herokuapp.com/products')
-        // .then((res)=>{
-        //     console.log(res)
-        //     let total = 0;
-        //     res.data.forEach((product)=>{
-        //        total+= Number(product.price)
+    
+        // axios.get('https://e-ommerce-server.herokuapp.com/cartProducts/'+this.props.user.name)
+        // .then((data)=>{
+            
+        //     let total =0;
+        //     data.data.forEach((item)=>{
+        //         total += (item.price * item.quantity)
         //     })
-        //     this.setState({products: res.data, total:total.toFixed(2)})
+
+        //     let product =[]
+        //     for(let i=0; i< data.data.length; i++){
+        //       product.push({
+        //         name: data.data[i].product,
+        //         description: data.data[i].description,
+        //         price: data.data[i].price,
+        //         img: data.data[i].img,
+        //         quantity: data.data[i].quantity,
+        //       })
+        //     }
+        //     //this.setState({ products: product})
+        //     this.setState({products:product, total})
         // })
+
         if(this.state.products){
             let total =0;
             this.state.products.forEach((product)=>{
@@ -45,14 +57,7 @@ class Cart extends React.Component{
     }
 
     updateTotal = (product) =>{
-        // let options = document.getElementsByTagName("OPTION");
-        // console.log(options)
-        // for(let i =0; i<options.length; i++){
-        //     if(options[i].selected){
-        //         console.log(`Value: ${options[i].value}`)
-        //     }
-            
-        // }
+        
         this.setState((state)=>{
             for(let i=0; i<state.products.length; i++){
                 if(state.products[i].name == product.name){
@@ -108,7 +113,7 @@ class Cart extends React.Component{
 
                     <div className="total-container">
                         <p><span>Total: </span> <span className="product-cart-price">{`$${this.state.total.toFixed(2)}`}</span></p>
-                        <TakeMoney amount={this.state.total*100}/>
+                        <TakeMoney user={this.props.user} clearCart ={this.props.clearCart} amount={this.state.total*100}/>
                     </div>
                 </div>
             </div>
