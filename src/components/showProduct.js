@@ -11,7 +11,8 @@ class ShowProduct extends React.Component{
         let product = {
             name: this.props.info.location.state.name,
             price: this.props.info.location.state.price,
-            img:this.props.info.location.state.img
+            img:this.props.info.location.state.img,
+            quantity: 1
         }
 
         this.props.addToCart(product)
@@ -19,7 +20,7 @@ class ShowProduct extends React.Component{
     render(){
         return(
             <div>
-        <Navigation />
+        <Navigation user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
              <div className="showProduct">
                 <div className= "show-product-image">
                   <img src={this.props.info.location.state.img}/>

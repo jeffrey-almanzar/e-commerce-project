@@ -24,7 +24,8 @@ class ProductCard extends React.Component{
                        name: this.props.name,
                        price: this.props.price,
                        description: this.props.description,
-                       img: this.props.img
+                       img: this.props.img,
+                       quantity: 1
                        }}}>
                    
                         <div className= "product-image">
