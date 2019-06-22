@@ -25,19 +25,19 @@ class Navigation extends React.Component{
                                 <li><Link to="/products" >Items</Link></li>
                                 
                             </ul>
-                            </div>
+                        </div>
 
-                            <div className= "nav-left">
+                        <div className= "nav-left">
                                 <ul>
                                    
                                     <li className="user-log-in">Hello, {this.props.user.name}</li>
                                     <li id="sign-in"  onClick={this.logout} role="button"><Link to="/" >Log out</Link></li>
-                                    <li id="cart" role="button"><Link to="/cart" ><span className="cart-size">{this.props.cartSize}</span><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" /></Link>
+                                    <li id="cart" role="button"><Link to="/cart" ><span className="cart-link">Cart</span><span className="cart-size">{this.props.cartSize}</span><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" /></Link>
                                     </li> 
                                     
                                 </ul>
 
-                            </div>
+                        </div>
 
                     </nav>
             </header>

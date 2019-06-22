@@ -268,3 +268,40 @@ font-size: 2.5rem;
   position: absolute;
   
 }
+
+.cart-link{
+  visibility: hidden;
+  position: absolute;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 720px){
+  .whole-nav{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100vh;
+  }
+
+  .nav-left{
+    justify-content: flex-start;
+    
+  }
+
+  .nav-left ul {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  #cart img{
+    visibility: hidden;
+  }
+
+  .cart-link{
+    visibility: visible;
+    position: relative;
+    margin-right: 10px;
+  }
+
+  
+}
