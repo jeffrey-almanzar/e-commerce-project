@@ -16,6 +16,7 @@
 
 .cart-info{
     text-align: center;
+
 }
 
 .product-card-parent:hover{
@@ -33,4 +34,10 @@
 #name{
     padding-top: 4px;
     color: rgb(119, 119, 119);
+}
+
+@media(max-width:720px){
+    .cart-info{
+        font-size: 1rem;
+    }
 }
