@@ -91,3 +91,10 @@
 .cart-container button{
     padding: 5px;
 }
+
+@media(max-width: 720px){
+    .cart-container{
+        width: 90%;
+        margin: auto;
+    }
+}
