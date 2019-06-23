@@ -30,23 +30,34 @@ class Home extends React.Component{
              <div className="para1">
                      <h3>What is Valiant</h3>
                     
-                     <p>Duis aute irure dolor in reprehenderit in voluptate 
-                         velit esse cillum dolore eu fugiat nulla pariatur. 
-                         Excepteur sint occaecat cupidatat non proid.</p>
+                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
 
              </div>
              <div className="para2">
                      <h3>Why choose Valiant</h3>
                      
                      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
              </div>
              <div className="para3">
                      <h3>More of Valiant</h3>
                      
-                     <p>Duis aute irure dolor in reprehenderit in voluptate 
-                         velit esse cillum dolore eu fugiat nulla pariatur. 
-                         Excepteur sint occaecat cupidatat non proid.</p>
+                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
              </div>
             
         </div>

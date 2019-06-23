@@ -303,5 +303,26 @@ font-size: 2.5rem;
     margin-right: 10px;
   }
 
+  .image-bottom{
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .image-bottom  h3{
+    font-size: 1.5rem;
+  }
+
+  .image-bottom p{
+    font-size: 1rem;
+  }
+
+  .image-bottom div{
+    margin-top: 20px;
+    color:#fff;
+    
+  }
+
   
 }
