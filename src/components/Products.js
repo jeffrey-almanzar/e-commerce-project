@@ -18,7 +18,7 @@ class Products extends React.Component{
     componentDidMount(){
         axios.get('https://e-ommerce-server.herokuapp.com/products')
         .then((res)=>{
-            console.log(res)
+        
             this.setState({products: res.data})
         })  
       }

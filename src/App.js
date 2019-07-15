@@ -45,7 +45,7 @@ class App extends React.Component{
   componentDidMount(){
     axios.get('https://e-ommerce-server.herokuapp.com/products')
     .then((res)=>{
-        console.log(res)
+      
         let product =[]
         for(let i=0; i< res.data.length; i++){
           product.push({
@@ -56,7 +56,7 @@ class App extends React.Component{
             quantity: res.data[i].quantity,
           })
         }
-        console.log(product)
+        
         this.setState({products: product})
     }) 
     
@@ -113,7 +113,7 @@ class App extends React.Component{
       if(notInCart && this.state.login){
         axios.post('https://e-ommerce-server.herokuapp.com/addToCart', {username: this.state.user.name, img: product.img, price:product.price, product: product.name, quantity:product.quantity})
         .then((data)=>{
-          console.log(data)
+         
         })
         return { shoppingCart: [...state.shoppingCart ,product]}
       }else{
@@ -137,7 +137,7 @@ class App extends React.Component{
     if(this.deletedItem.name){
       axios.delete('https://e-ommerce-server.herokuapp.com/removeItem/'+this.deletedItem.name)
       .then((data)=>{
-        console.log(data)
+       
       })
     }
    

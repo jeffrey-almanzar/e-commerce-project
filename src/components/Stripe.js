@@ -18,7 +18,7 @@ class TakeMoney extends React.Component {
     .then((res)=>{
         axios.delete('https://e-ommerce-server.herokuapp.com/clearCart/'+this.props.user.name)
             .then((data)=>{
-            console.log(data)
+            
             this.props.clearCart()
          })
 
@@ -26,9 +26,9 @@ class TakeMoney extends React.Component {
         this.setState({redirect:true})
     })
     .catch((err)=>{
-        console.log(err)
+       
     })
-    console.log(token.id)
+   
         
     }
 

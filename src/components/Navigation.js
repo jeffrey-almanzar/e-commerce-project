@@ -10,7 +10,7 @@ class Navigation extends React.Component{
     }
 
     render(){
-        console.log(this.props.cartSize)
+        
         if(this.props.login){
             return(
                 <header>

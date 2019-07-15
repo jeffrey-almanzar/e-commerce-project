@@ -22,7 +22,6 @@ class Cart extends React.Component{
         if(this.state.products){
             let total =0;
             this.state.products.forEach((product)=>{
-                console.log(product.quantity)
                 total+= (product.price * product.quantity);
             })
 
@@ -55,7 +54,7 @@ class Cart extends React.Component{
             return {products : [...state.products], total}
         })
        
-        console.log(product)
+  
     }
 
     getProducts = () =>{

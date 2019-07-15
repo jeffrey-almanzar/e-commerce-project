@@ -36,7 +36,7 @@ class LogIn extends React.Component{
             password: this.state.password
         })
         .then((res)=>{
-            console.log(res)
+            
             axios.put("https://e-ommerce-server.herokuapp.com/userSignedIn/"+res.data.id)
             if(res.data){
                 let user = {
@@ -59,7 +59,7 @@ class LogIn extends React.Component{
             
         })
         .catch(err =>{
-            console.log(err)
+         
             alert("Either the email or the password is not correct")
         })
         
