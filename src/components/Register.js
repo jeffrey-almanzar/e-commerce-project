@@ -77,21 +77,7 @@ class Register extends React.Component{
 
 
 
-            <div >
-                <footer>
-                        
-                      
-                            <ul className="styleF">
-                                <li> <a href="/">Privacy Policy</a></li>
-                                <li> <a href="/">Terms of Use</a></li>
-                                <li> <a href="/">Sponsers</a></li>
-                                <li><a href="/">Location</a></li>
-                            </ul>
-                
-                        <p>&copy; 2019 Valiant</p>
-                   
-                    </footer>
-            </div>
+        
             </div>
 
         )

@@ -1,7 +1,8 @@
 {
   "name": "e-shop",
   "version": "0.1.0",
-  "private": true, "engines": {
+  "private": true,
+  "engines": {
     "node": "10.15.3"
   },
   "dependencies": {
@@ -37,4 +38,3 @@
     ]
   }
 }
-
