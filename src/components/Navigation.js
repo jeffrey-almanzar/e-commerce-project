@@ -8,16 +8,38 @@ class Navigation extends React.Component{
     constructor(props){
         super(props);
         this.menu = React.createRef();
+        this.menuLoggedIn = React.createRef();
         this.state={
-            showMenu:false
+            showMenu:false,
+            showMenuLoggedIn:false,
+        }  
+        
+    }
+
+    updateDimensions = ()=>{
+        if(window.innerWidth > 721) {
+            //this.menu.current.style.display ="flex";
         }
     }
 
-    componentDidMount(){
-        this.menu.current.style.display ="none";
+    componentDidMount(){ 
+        try{
+            this.menu.current.style.display ="none";
+        } catch{
+            this.menuLoggedIn.current.style.display ="none";
+        }
+       
+        this.updateDimensions();
+        window.addEventListener("resize", this.updateDimensions.bind(this));        
     }
 
-    onClick = ()=>{
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateDimensions.bind(this));
+    }
+
+    onClickLogout = ()=>{
+        
+
         if(this.state.showMenu){
             this.menu.current.style.display ="none";
             this.setState({showMenu:false})
@@ -27,12 +49,24 @@ class Navigation extends React.Component{
         }      
     }
 
+    onClickLoggedIn = ()=>{
+    
+        if(this.state.showMenuLoggedIn){
+            this.menuLoggedIn.current.style.display ="none";
+            this.setState({showMenuLoggedIn:false})
+        }else{
+            this.menuLoggedIn.current.style.display ="flex";
+            this.setState({showMenuLoggedIn:true})
+        }      
+    }
+
     logout = () =>{
         alert("Logging out")
         this.props.loginFunction(false, "")
     }
 
     render(){
+        
         
         if(this.props.login){
             return(
@@ -45,26 +79,29 @@ class Navigation extends React.Component{
                                     src="http://www.logo-designer.co/wp-content/uploads/2013/04/V-Management-model-agency-logo-design-branding-identity-graphics-AKU-5.jpg"
                                     alt="Main logo"/>
                             </Link>
-
-                            <ul>
-                                <li><Link to="/" >Valiant</Link></li>
-                                <li><Link to="/products" >Items</Link></li>                              
-                            </ul>
+                            
+                            <div className="nav-logo-container">
+                                <ul>
+                                    <li><Link to="/" >Valiant</Link></li>                           
+                                </ul>
+                                <div className="menu-container"  onClick={this.onClickLoggedIn}>
+                                    <img src={menu} alt="menu" />
+                                </div>  
+                            </div>
 
                         </div>
 
-                        <div className= "nav-left" ref={menu}>
-                            <ul>                                   
+                        <div className= "nav-left" ref={this.menuLoggedIn}>
+                            <ul>                                  
                                 <li className="user-log-in">Hello, {this.props.user.name}</li>
+                                <li><Link to="/products" >Products</Link></li>  
                                 <li id="sign-in"  onClick={this.logout} role="button"><Link to="/" >Log out</Link></li>
                                 <li id="cart" role="button"><Link to="/cart" ><span className="cart-link">Cart</span><span className="cart-size">{this.props.cartSize}</span><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" /></Link>
                                 </li>                                    
                             </ul>
                         </div>
 
-                        <div className="menu-container"  onClick={this.onClick}>
-                            <img src={menu} alt="menu" />
-                        </div>
+                       
 
                     </nav>
                 </header>
@@ -85,7 +122,7 @@ class Navigation extends React.Component{
                         <ul>
                             <li><Link to="/" >Valiant</Link></li>
                         </ul>
-                        <div className="menu-container"  onClick={this.onClick}>
+                        <div className="menu-container"  onClick={this.onClickLogout}>
                             <img src={menu} alt="menu" />
                         </div>
                     </div>
@@ -102,9 +139,7 @@ class Navigation extends React.Component{
                         </li> 
                     </ul>                  
                 </div>
-
-               
-
+    
             </nav>
         </header>
         )
