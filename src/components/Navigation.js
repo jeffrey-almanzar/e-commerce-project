@@ -17,29 +17,28 @@ class Navigation extends React.Component{
     }
 
     updateDimensions = ()=>{
-        if(window.innerWidth > 721) {
-            //this.menu.current.style.display ="flex";
+        if (window.innerWidth > 721){
+            if(this.props.login){
+                //this.menuLoggedIn.current.style.display ="flex";
+                document.getElementById("loggedInLinks").style.display="flex";
+            }else{
+                //this.menu.current.style.display ="flex";
+                document.getElementById("logOutLinks").style.display="flex";
+            }
+           
         }
     }
 
     componentDidMount(){ 
-        try{
-            this.menu.current.style.display ="none";
-        } catch{
-            this.menuLoggedIn.current.style.display ="none";
-        }
-       
-        this.updateDimensions();
-        window.addEventListener("resize", this.updateDimensions.bind(this));        
+        window.addEventListener("resize", this.updateDimensions);        
     }
 
     componentWillUnmount() {
-        window.removeEventListener("resize", this.updateDimensions.bind(this));
+        window.removeEventListener("resize", this.updateDimensions);
     }
 
     onClickLogout = ()=>{
         
-
         if(this.state.showMenu){
             this.menu.current.style.display ="none";
             this.setState({showMenu:false})
@@ -91,7 +90,7 @@ class Navigation extends React.Component{
 
                         </div>
 
-                        <div className= "nav-left" ref={this.menuLoggedIn}>
+                        <div id="loggedInLinks" className= "nav-left" ref={this.menuLoggedIn}>
                             <ul>                                  
                                 <li className="user-log-in">Hello, {this.props.user.name}</li>
                                 <li><Link to="/products" >Products</Link></li>  
@@ -128,7 +127,7 @@ class Navigation extends React.Component{
                     </div>
                 </div>
 
-                <div className= "nav-left"ref={this.menu} >
+                <div id="logOutLinks" className= "nav-left"ref={this.menu} >
         
                     <ul >
                         <li><Link to="/products" >Products</Link></li>   
