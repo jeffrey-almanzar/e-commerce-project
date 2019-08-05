@@ -39,12 +39,6 @@ class LogIn extends React.Component{
             
             axios.put("https://e-ommerce-server.herokuapp.com/userSignedIn/"+res.data.id)
             if(res.data){
-                let user = {
-                    name:res.data.name,
-                    email:res.data.email,
-                    password:res.data.password
-                }
-                
                 localStorage.setItem("name", res.data.name)
                 localStorage.setItem("email", res.data.email)
                 localStorage.setItem("password", res.data.password)

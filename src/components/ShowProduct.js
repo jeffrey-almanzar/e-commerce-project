@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/login.css';
 import '../App.css';
 import '../css/showProduct.css';
-import {Link} from 'react-router-dom';
 import Navigation from './Navigation';
 
 
@@ -23,7 +22,7 @@ class ShowProduct extends React.Component{
         <Navigation cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
              <div className="showProduct">
                 <div className= "show-product-image">
-                  <img src={this.props.info.location.state.img}/>
+                  <img src={this.props.info.location.state.img} alt="img"/>
                 </div>
              <div className="description">
                   <h1 id="name">{this.props.info.location.state.name} </h1>

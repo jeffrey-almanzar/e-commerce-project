@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import {Link} from 'react-router-dom';
 import Navigation from './Navigation';
 // import logo from '../images/icon.JPG';
 
@@ -11,9 +10,9 @@ class Home extends React.Component{
     <div className="">
     <Navigation cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction} />
 
-    <body>
+    <div>
         <div className ="homePic">
-            <img src = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/31/16/istock-639223110-2.jpg"/>
+            <img src = "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/12/31/16/istock-639223110-2.jpg" alt="img" />
         <div className="image-top">
                 <p className= "the-name">Valiant</p>
 
@@ -77,7 +76,7 @@ class Home extends React.Component{
                    
                     </footer>
             </div>
-        </body>
+        </div>
      
     </div>
   );

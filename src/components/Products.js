@@ -3,7 +3,7 @@ import axios from 'axios';
 import ProductCard from './ProductCard';
 import '../css/products.css';
 import Navigation from './Navigation';
-import {Link} from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 class Products extends React.Component{
 
@@ -11,15 +11,15 @@ class Products extends React.Component{
         super(props)
 
         this.state ={
-            products: ""
+            products: "",
+            isPending: true
         }
     }
 
     componentDidMount(){
         axios.get('https://e-ommerce-server.herokuapp.com/products')
-        .then((res)=>{
-        
-            this.setState({products: res.data})
+        .then((res)=>{      
+            this.setState({products: res.data, isPending:false})
         })  
       }
 
@@ -27,7 +27,7 @@ class Products extends React.Component{
 
     render(){
         let products =[]
-        if(this.state.products.length){
+        if(this.state.products.length && !this.state.isPending){
             this.state.products.forEach((product)=>{
                 products.push(
                 <ProductCard key={ Math.floor(Math.random() * 1000)}
@@ -42,6 +42,21 @@ class Products extends React.Component{
                 </ProductCard>)
             });
 
+        }else if (this.state.isPending){
+            products =(
+                <div
+                      style={{
+                       width: "100%",
+                       height: "100",
+                       display: "flex",
+                       justifyContent: "center",
+                       alignItems: "center"
+                     }}
+                    >
+                      <Loader type="ThreeDots" color="#ffc7bc" height={100} width={100} />
+                </div>
+
+            );
         }
         
 

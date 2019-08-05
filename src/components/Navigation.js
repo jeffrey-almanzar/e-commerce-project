@@ -84,7 +84,7 @@ class Navigation extends React.Component{
                                     <li><Link to="/" >Valiant</Link></li>                           
                                 </ul>
                                 <div className="menu-container"  onClick={this.onClickLoggedIn}>
-                                    <img src={menu} alt="menu" />
+                                    <img src={menu} alt="menu"/>
                                 </div>  
                             </div>
 
@@ -95,7 +95,7 @@ class Navigation extends React.Component{
                                 <li className="user-log-in">Hello, {this.props.user.name}</li>
                                 <li><Link to="/products" >Products</Link></li>  
                                 <li id="sign-in"  onClick={this.logout} role="button"><Link to="/" >Log out</Link></li>
-                                <li id="cart" role="button"><Link to="/cart" ><span className="cart-link">Cart</span><span className="cart-size">{this.props.cartSize}</span><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" /></Link>
+                                <li id="cart" role="button"><Link to="/cart" ><span className="cart-link">Cart</span><span className="cart-size">{this.props.cartSize}</span><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" alt="img" /></Link>
                                 </li>                                    
                             </ul>
                         </div>
@@ -134,7 +134,7 @@ class Navigation extends React.Component{
                         <li id="sign-in" role="button"><Link to="/login" >Sign in</Link></li>
                         <li><Link to="/register" >Register</Link></li>
                         <li id="cart" role="button">
-                            <Link to="/cart" ><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" /></Link>
+                            <Link to="/cart" ><img src="https://cdn.dribbble.com/users/1146750/screenshots/2737669/savr-cart_small.gif" alt="img" /></Link>
                         </li> 
                     </ul>                  
                 </div>

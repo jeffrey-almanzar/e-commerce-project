@@ -106,7 +106,7 @@ class App extends React.Component{
     this.setState( (state) =>{
       let notInCart = true;
       state.shoppingCart.forEach((pr)=>{
-        if(product.name == pr.name){
+        if(product.name === pr.name){
           notInCart = false;
         }
       })

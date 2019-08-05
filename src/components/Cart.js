@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import CartProduct from './CartProduct';
 import TakeMoney from './Stripe';
 import Navigation from './Navigation';
@@ -16,8 +15,6 @@ class Cart extends React.Component{
     }
 
     componentDidMount(){
-    
-        
 
         if(this.state.products){
             let total =0;
@@ -25,13 +22,8 @@ class Cart extends React.Component{
                 total+= (product.price * product.quantity);
             })
 
-            this.setState({total:total})
-
-            
-            
+            this.setState({total:total})            
         }
-       
-
        
     }
 
@@ -39,7 +31,7 @@ class Cart extends React.Component{
         
         this.setState((state)=>{
             for(let i=0; i<state.products.length; i++){
-                if(state.products[i].name == product.name){
+                if(state.products[i].name === product.name){
                    
                     state.products[i] = product;
                     break;
@@ -75,17 +67,13 @@ class Cart extends React.Component{
         if(!this.state.products.length){
             return(
 
-            //  <div>
-            //     <Navigation  cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction}/>
-            //     <h1 className="cart-container-title">Shopping Cart</h1>
-            //     <h3 className="cart-info">There are no products in your shopping cart yet.</h3>
              <div >
                
                 <Navigation  cartSize={this.props.cartSize} user={this.props.user} login={this.props.login} loginFunction = {this.props.loginFunction}/>
                 
                 <div className ="cart-div"> <h1 className="cart-container-title">Shopping Cart</h1>
                 <h3 className="cart-info">There are no products in your shopping cart yet.</h3> 
-                <img src="https://cdn.dribbble.com/users/2046015/screenshots/4591856/first_white_girl_drbl.gif"/>
+                <img src="https://cdn.dribbble.com/users/2046015/screenshots/4591856/first_white_girl_drbl.gif" alt="img"/>
                 </div>
                
             </div>
@@ -108,8 +96,6 @@ class Cart extends React.Component{
             </div>
         )
     }
-
-
 }
 
 export default Cart;
