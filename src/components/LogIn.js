@@ -1,98 +1,106 @@
-import React from 'react';
-import '../css/login.css';
-import Navigation from './Navigation';
-import {Redirect, Link} from 'react-router-dom';
-import axios from 'axios';
+import React from "react";
+import "../css/login.css";
+import Navigation from "./Navigation";
+import { Redirect, Link } from "react-router-dom";
+import axios from "axios";
 
+class LogIn extends React.Component {
+  constructor(props) {
+    super(props);
 
-class LogIn extends React.Component{
+    this.state = {
+      email: "",
+      password: "",
+      redirect: false
+    };
+  }
 
-    constructor(props){
-        super(props)
+  emailChange = event => {
+    this.setState({ email: event.target.value });
+  };
 
-        this.state = {
-            email:"",
-            password:"",
-            redirect:false
+  passwordChange = event => {
+    this.setState({ password: event.target.value });
+  };
+
+  logInUser = user => {
+    this.props.loginFunction(true, user);
+  };
+
+  submit = e => {
+    e.preventDefault();
+    axios
+      .post("https://e-ommerce-server.herokuapp.com/login", {
+        email: this.state.email,
+        password: this.state.password
+      })
+      .then(res => {
+        axios.put(
+          "https://e-ommerce-server.herokuapp.com/userSignedIn/" + res.data.id
+        );
+        if (res.data) {
+          localStorage.setItem("name", res.data.name);
+          localStorage.setItem("email", res.data.email);
+          localStorage.setItem("password", res.data.password);
+          this.setState({ redirect: true });
+        } else {
+          alert("Either the email or the password is not correct");
         }
+
+        this.logInUser(res.data);
+      })
+      .catch(err => {
+        alert("Either the email or the password is not correct");
+      });
+  };
+
+  render() {
+    if (this.state.redirect) {
+      return <Redirect to="/products" />;
     }
+    return (
+      <div>
+        <Navigation cartSize={this.props.cartSize} />
 
-    emailChange = (event) =>{
-        this.setState({email: event.target.value})
-    } 
+        <div className="login-form-container">
+          <form className="login-from" onSubmit={this.submit}>
+            <h1 className="log-in-header">Log In</h1>
 
-    passwordChange = (event) =>{
-        this.setState({password: event.target.value})
-    }
-
-    logInUser = (user) =>{
-        this.props.loginFunction(true,user)
-    }
-
-    submit = (e) =>{
-        e.preventDefault()
-        axios.post("https://e-ommerce-server.herokuapp.com/login", {
-            email:this.state.email,
-            password: this.state.password
-        })
-        .then((res)=>{
-            
-            axios.put("https://e-ommerce-server.herokuapp.com/userSignedIn/"+res.data.id)
-            if(res.data){
-                localStorage.setItem("name", res.data.name)
-                localStorage.setItem("email", res.data.email)
-                localStorage.setItem("password", res.data.password)
-                this.setState({redirect:true})
-            }
-            else{
-                alert("Either the email or the password is not correct")
-            }
-           
-           
-            this.logInUser(res.data)
-            
-        })
-        .catch(err =>{
-         
-            alert("Either the email or the password is not correct")
-        })
-        
-   
-    
-    }
-
-    render(){
-        if(this.state.redirect){
-            return <Redirect to="/products" />
-        }
-        return(
             <div>
-            <Navigation cartSize={this.props.cartSize} />
-               
+              <p>
+                <label>Email</label>
+              </p>
+              <input
+                type="email"
+                value={this.state.email}
+                onChange={this.emailChange}
+                required
+              />
 
-            <div className="login-form-container">
+              <p>
+                <label>Password</label>
+              </p>
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.passwordChange}
+                required
+              />
+              <br />
 
-                    <form className="login-from" onSubmit={this.submit}>
-                        <h1 className="log-in-header">Log In</h1>
-                        
-                        <div>
-                            <p><label>Email</label></p>
-                            <input type="email" value={this.state.email} onChange={this.emailChange} required/>
-
-                            <p><label>Password</label></p>
-                            <input type="password" value={this.state.password} onChange={this.passwordChange} required/>
-                            <br />
-
-                            <button className="btn" type="submit">Log In</button>
-                            <Link to="/register"><button className="btn" >Create Account</button></Link>
-                            <p className="demo-user">Demo user: demo@gmail.com   123456</p>
-                        </div>
-                    </form>
+              <button className="btn" type="submit">
+                Log In
+              </button>
+              <Link to="/register">
+                <button className="btn">Create Account</button>
+              </Link>
+              <p className="demo-user">Demo user: demo@gmail.com 123456</p>
             </div>
-            
-            </div>
-        )
-    }
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default LogIn;
