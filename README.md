@@ -12,10 +12,10 @@ Developed this application in collaboration with Asifa Khan.
 •  Implemented real payment handling using the Stripe API.  
 •  Implemented user authentication.  
 •  Wrote all the server side code. For instance, I created the end points, the data base, the data base tables, models, etc.    
-•  Connected the front-end with back-end.   
+•  Connected the front-end with the back-end.   
 •  Deployed the front-end to Netlify and the back-end to Heroku.
 
-## Server-side code
+## Server side code
 https://github.com/Jeffrey-A/eCommerceServer  
 
 ## Home 
