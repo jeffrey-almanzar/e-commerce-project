@@ -12,7 +12,7 @@
 Developed this application in collaboration with Asifa Khan.  
 
 ### What I worked on:  
-•  Managed the state of the entire application. In addition, I added state and interactivity to the sateless components created by Asifa.  
+•  Managed the state of the entire application. In addition, I added state and interactivity to the stateless components created by Asifa.  
 •  Implemented the shopping cart functionality.  
 •  Implemented real payment handling using the Stripe API.  
 •  Implemented user authentication.  
