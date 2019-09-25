@@ -3,6 +3,11 @@
 •	Built with React JS, React Router, Axios, Node JS/Express, Sequelize, PostgreSQL, and the Stripe API.  
 •	Live demo: https://valiantshopping.netlify.com/  
 
+## Testing Data
+• Demo user: demo@gmail.com  
+• password: 123456  
+• Credit card: 4242 4242 4242 4242  
+• Any other data related to the credit card can be random. 
 ## My contribution 
 Developed this application in collaboration with Asifa Khan.  
 
