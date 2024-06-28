@@ -2,11 +2,6 @@
 •	Valiant is a full stack e-commerce with shopping cart functionality, real payment handling and mobile friendly.  
 •	Built with React JS, React Router, Axios, Node JS/Express, Sequelize, PostgreSQL, and the Stripe API.  
 
-## Testing Data
-• Demo user: demo@gmail.com  
-• password: 123456  
-• Credit card: 4242 4242 4242 4242  
-• Any other data related to the credit card can be random. 
 ## My contribution 
 Developed this application in collaboration with Asifa Khan.  
 
@@ -18,6 +13,12 @@ Developed this application in collaboration with Asifa Khan.
 •  Wrote all the server side code. For instance, I created the end points, the data base, the data base tables, models, etc.    
 •  Connected the front-end with the back-end.   
 •  Deployed the front-end to Netlify and the back-end to Heroku.
+
+## Testing Data
+• Demo user: demo@gmail.com  
+• password: 123456  
+• Credit card: 4242 4242 4242 4242  
+• Any other data related to the credit card can be random. 
 
 ## Server side code
 https://github.com/Jeffrey-A/eCommerceServer  
