@@ -18,10 +18,7 @@ Developed this application in collaboration with Asifa Khan.
 • Demo user: demo@gmail.com  
 • password: 123456  
 • Credit card: 4242 4242 4242 4242  
-• Any other data related to the credit card can be random. 
-
-## Server side code
-https://github.com/Jeffrey-A/eCommerceServer  
+• Any other data related to the credit card can be random.  
 
 ## Home 
 <img src="previewImages/home.JPG" width="600" />  
